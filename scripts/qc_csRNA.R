@@ -8,7 +8,7 @@ A.ctl <- read_tsv("results/STAR/A1.input-tagDir/tagLengthDistribution.txt",col_n
 D.csRNA <- read_tsv("results/STAR/D8.csRNA-tagDir/tagLengthDistribution.txt",col_names=c("TagLength","FractionTags"),skip=1)
 D.ctl <- read_tsv("results/STAR/D8.input-tagDir/tagLengthDistribution.txt",col_names=c("TagLength","FractionTags"),skip=1)
 
-
+pdf("csRNAseq_qc.pdf")
 A = bind_rows(list(A.ctl %>% add_column("Source"="A.ctl") ,
           A.csRNA %>% add_column("Source"="A.csRNA") ))
 
